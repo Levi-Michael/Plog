@@ -1,12 +1,15 @@
 # Plog
 
 TOPIC
+
     about_Plog
 
 SHORT DESCRIPTION
+
     Powershell Logger module called Plog that allows easy to use logging functionalities.
 
 LONG DESCRIPTION
+
     Plog is a module for logging scripts, The module was created for personal use
     by Michael Shvili aka L0l2K and is public and free for sharing.
     
@@ -16,6 +19,7 @@ LONG DESCRIPTION
     The log options are INFO, WARNING, ERROR, DEBUG, ACTION, SUCCESS.
     
 SYNTAX
+
 	Start-Log
 		-Path <String>
 		[-Name <String>]
@@ -51,7 +55,8 @@ SYNTAX
 		[-Print <Boolean>]
 		[-Save <Boolean>]
 
-EXAMPLES	
+EXAMPLES
+
 	#Create Test.log and test-transcript.log in the folder: C:\Temp\Logs
 	Start-Log -Path C:\Temp\Logs -Name Test.log -Transcript $true
 	
@@ -63,7 +68,9 @@ EXAMPLES
 	Stop-Log
 
 KEYWORDS
+
     None.
 
 SEE ALSO
+
     More information update and changes and tools at @Levi-Michael Github.
