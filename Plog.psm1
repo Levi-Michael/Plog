@@ -1,16 +1,25 @@
-﻿
-Function LogPath{
+﻿Function StartLog{
 
     Param(
          [Parameter(Mandatory=$true, Position=0)]
          [string] $Path,
          [Parameter(Mandatory=$true, Position=1)]
-         [string] $Name
+         [string] $Name,
+         [Parameter(Mandatory=$false, Position=2)]
+         [string] $Transcript
     )
 
 
+    $FileName = $Name.Split(".")
+    $FileName = $FileName[0]
+
     $Time = (Get-Date).ToString('hh:mm:ss')
     $Script:Logfile = "$Path\$Name"
+
+    if($Transcript -eq $true){
+    Start-Transcript -Path $Path\$FileName-Transcript.txt -Force -Append
+    
+    }
 
     Write-Host "[$Time][INFO]: Log created by: $env:UserName from Computer: $env:computername at: $Time " -B Black -F Gray 
     Add-content $Logfile -value "[$Time][INFO]: Log created by: $env:UserName from Computer: $env:computername at: $Time "
@@ -140,4 +149,10 @@ Function LogDebug{
         $Time = (Get-Date).ToString('hh:mm:ss')
         Write-Host "[$Time][DEBUG]: $LogString" -B Black -F Magenta
     }
+}
+
+
+Function StopLog{
+    Stop-Transcript
+
 }
