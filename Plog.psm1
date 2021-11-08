@@ -1,4 +1,4 @@
-﻿Function StartLog{
+﻿Function Start-Log{
 
     Param(
          [Parameter(Mandatory=$true, Position=0)]
@@ -28,7 +28,7 @@
 
 }
 
-Function LogInfo{
+Function Log-Info{
     Param(
          [Parameter(Mandatory=$true, Position=0)]
          [string] $LogString,
@@ -60,7 +60,7 @@ Function LogInfo{
 }
 
 
-Function LogWarning{
+Function Log-Warning{
     Param(
          [Parameter(Mandatory=$true, Position=0)]
          [string] $LogString,
@@ -86,11 +86,11 @@ Function LogWarning{
     }
     Elseif($Print -eq $null -and $Save -eq $null){
         $Time = (Get-Date).ToString('hh:mm:ss')
-        Write-Host "[$Time][WANING]: $LogString" -B Black -F Yellow
+        Write-Host "[$Time][WARNING]: $LogString" -B Black -F Yellow
     }
 }
 
-Function LogError{
+Function Log-Error{
     Param(
          [Parameter(Mandatory=$true, Position=0)]
          [string] $LogString,
@@ -121,7 +121,7 @@ Function LogError{
 }
 
 
-Function LogDebug{
+Function Log-Debug{
     Param(
          [Parameter(Mandatory=$true, Position=0)]
          [string] $LogString,
@@ -152,7 +152,69 @@ Function LogDebug{
 }
 
 
-Function StopLog{
+Function Log-Action{
+    Param(
+         [Parameter(Mandatory=$true, Position=0)]
+         [string] $LogString,
+         [Parameter(Mandatory=$false, Position=1)]
+         [string] $Print,
+         [Parameter(Mandatory=$false, Position=2)]
+         [string] $Save
+
+    )
+
+    if($Print -eq $true -and $Save -eq $true){
+        $Time = (Get-Date).ToString('hh:mm:ss')
+        Write-Host "[$Time][ACTION]: $LogString" -B Black -F Blue
+        Add-content $Logfile -value "[$Time][ACTION]: $LogString"
+    }
+    Elseif($Print -eq $false -and $Save -eq $true){
+        $Time = (Get-Date).ToString('hh:mm:ss')
+        Add-content $Logfile -value "[$Time][ACTION]: $LogString"
+    }
+    Elseif($Print -eq $true -and $Save -eq $false){
+        $Time = (Get-Date).ToString('hh:mm:ss')
+        Write-Host "[$Time][ACTION]: $LogString" -B Black -F Blue
+    }
+    Elseif($Print -eq $null -and $Save -eq $null){
+        $Time = (Get-Date).ToString('hh:mm:ss')
+        Write-Host "[$Time][ACTION]: $LogString" -B Black -F Blue
+    }
+}
+
+
+Function Log-Success{
+    Param(
+         [Parameter(Mandatory=$true, Position=0)]
+         [string] $LogString,
+         [Parameter(Mandatory=$false, Position=1)]
+         [string] $Print,
+         [Parameter(Mandatory=$false, Position=2)]
+         [string] $Save
+
+    )
+
+    if($Print -eq $true -and $Save -eq $true){
+        $Time = (Get-Date).ToString('hh:mm:ss')
+        Write-Host "[$Time][SUCCESS]: $LogString" -B Black -F Green
+        Add-content $Logfile -value "[$Time][SUCCESS]: $LogString"
+    }
+    Elseif($Print -eq $false -and $Save -eq $true){
+        $Time = (Get-Date).ToString('hh:mm:ss')
+        Add-content $Logfile -value "[$Time][SUCCESS]: $LogString"
+    }
+    Elseif($Print -eq $true -and $Save -eq $false){
+        $Time = (Get-Date).ToString('hh:mm:ss')
+        Write-Host "[$Time][SUCCESS]: $LogString" -B Black -F Green
+    }
+    Elseif($Print -eq $null -and $Save -eq $null){
+        $Time = (Get-Date).ToString('hh:mm:ss')
+        Write-Host "[$Time][SUCCESS]: $LogString" -B Black -F Green
+    }
+}
+
+
+Function Stop-Log{
     Stop-Transcript
 
 }
