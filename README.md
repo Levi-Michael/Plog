@@ -17,6 +17,11 @@ LONG DESCRIPTION
     you can add an a Transcript file at the Start-Log command for covering both logging methods.
     
     The log options are INFO, WARNING, ERROR, DEBUG, ACTION, SUCCESS.
+	
+HOW TO INSTALL THE MODULE
+	
+	Just download the Plog and put Plog Folder at:
+	"C:\Users\YOUR-USERNAME\Documents\WindowsPowerShell\Modules"
     
 SYNTAX
 
