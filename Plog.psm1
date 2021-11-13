@@ -10,14 +10,11 @@
     )
 
 
-    $FileName = $Name.Split(".")
-    $FileName = $FileName[0]
-
     $Time = (Get-Date).ToString('hh:mm:ss')
     $Script:Logfile = "$Path\$Name"
 
     if($Transcript -eq $true){
-    Start-Transcript -Path $Path\$FileName-Transcript.txt -Force -Append
+        Start-Transcript -Path $Path\$($Name.Split(".")[0])-Transcript.txt -Force -Append
     
     }
 
