@@ -74,7 +74,7 @@ EXAMPLES
 
 Example-Screenshot
 
-	![alt text](https://github.com/Levi-Michael/Plog/blob/main/Example%20Screenshot.png?raw=true)
+	![Example-Screenshot](https://github.com/Levi-Michael/Plog/blob/main/Example%20Screenshot.png?raw=true)
 	
 	
 KEYWORDS
