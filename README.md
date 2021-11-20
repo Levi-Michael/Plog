@@ -74,7 +74,7 @@ EXAMPLES
 
 Example-Screenshot
 
-	![Example-Screenshot](Images/Example-Screenshot.png)
+	![](Images/Example-Screenshot.png)
 	
 	
 KEYWORDS
