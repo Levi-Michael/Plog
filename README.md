@@ -59,6 +59,10 @@ SYNTAX
 		-LogString <String>
 		[-Print <Boolean>]
 		[-Save <Boolean>]
+		
+	Read-Log
+		-Path <String>
+		[-LogLevel <String>]
 
 EXAMPLES
 
