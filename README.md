@@ -72,6 +72,11 @@ EXAMPLES
 	#Stop the log and close the log files, for use with -Transcript only.
 	Stop-Log
 
+Example-Screenshot
+
+	![alt text](https://github.com/Levi-Michael/Plog/blob/main/Example%20Screenshot.png?raw=true)
+	
+	
 KEYWORDS
 
     None.
